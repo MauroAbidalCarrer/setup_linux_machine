@@ -24,3 +24,9 @@ eval "$(ssh-agent -s)"
 echo "Please copy the key: "
 cat ~/.ssh/id_ed25519.pub
 ehco "\nAdd it to your github account(Settings->SSSH and GPG keys->new SSH key)
+
+#setting up vim
+sudo apt-get install vim
+echo "syntax on" >>  ~/.vimrc
+echo "set nu"    >>  ~/.vimrc
+echo "set mouse=a">> ~/.vimrc
