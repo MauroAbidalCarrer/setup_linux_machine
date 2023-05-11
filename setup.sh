@@ -16,17 +16,25 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
 
 #installing oh my zsh
-echo "yes" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #setting up shs key for github
 ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 echo "Please copy the key: "
 cat ~/.ssh/id_ed25519.pub
-ehco "\nAdd it to your github account(Settings->SSSH and GPG keys->new SSH key)
+echo "\nAdd it to your github account(Settings->SSSH and GPG keys->new SSH key)"
 
 #setting up vim
 sudo apt-get install vim
 echo "syntax on" >>  ~/.vimrc
 echo "set nu"    >>  ~/.vimrc
 echo "set mouse=a">> ~/.vimrc
+
+
+#alias
+echo "alias update='sudo apt-get update'" >> ~/.zshrc
+echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
+echo "alias status='git status'" >> ~/.zshrc
+echo "alias log='git log --all --graph --decorate --oneline --simplify-by-decoration'" >> ~/.zshrc
+echo "alias commit='git commit -am'" >> ~/.zshrc
