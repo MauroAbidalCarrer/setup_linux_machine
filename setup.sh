@@ -19,7 +19,7 @@ sudo docker run hello-world
 echo "yes" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #setting up shs key for github
-echo "\n\n" | ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 echo "Please copy the key: "
 cat ~/.ssh/id_ed25519.pub
