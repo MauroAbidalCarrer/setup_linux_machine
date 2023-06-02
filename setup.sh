@@ -11,12 +11,8 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo docker run hello-world
-
-#installing oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #setting up shs key for github
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -41,13 +37,20 @@ echo "alias commit='git commit -am'" >> ~/.zshrc
 
 
 #install VScode
-sudo apt-get install wget gpg
+sudo apt-get install -y gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
-
-
-sudo apt install apt-transport-https
+sudo apt install -y apt-transport-https
 sudo apt update
-sudo apt install code # or code-insiders
+sudo apt install -y code # or code-insiders
+
+#install node and nestJS
+sudo apt-get install -y npm
+sudo npm install npm@latest -g
+sudo npm i -g @nestjs/cli
+echo "alias nest='node /usr/local/lib/node_modules/@nestjs/cli/bin/nest.js'"
+
+#installing oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
