@@ -51,6 +51,7 @@ sudo apt update
 sudo apt install -y code # or code-insiders
 #install extensions
 code --install-extension ms-python.python
+code --install-extension mhutchie.git-graph
 
 #install node and nestJS
 sudo apt-get install -y npm
