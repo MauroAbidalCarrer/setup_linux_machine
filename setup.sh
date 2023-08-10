@@ -3,6 +3,10 @@
 sudo apt-get update
 sudo apt-get install -y git curl wget zsh 
 
+#setup git
+git config --global user.email "mauroabida@yahoo.fr"
+git config --global user.name "Mauro Abidal Carrer"
+
 #install docker 
 sudo apt-get install -y ca-certificates gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -46,6 +50,9 @@ rm -f packages.microsoft.gpg
 sudo apt install -y apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
+#install extensions
+code --install-extension ms-python.python
+code --install-extension mhutchie.git-graph
 
 #install node and nestJS
 sudo apt-get install -y npm
