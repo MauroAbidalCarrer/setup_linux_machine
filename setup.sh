@@ -6,6 +6,7 @@ sudo apt-get install -y git curl wget zsh
 #setup git
 git config --global user.email "mauroabida@yahoo.fr"
 git config --global user.name "Mauro Abidal Carrer"
+git config --global init.defaultBranch main
 
 #install docker 
 sudo apt-get install -y ca-certificates gnupg
@@ -62,3 +63,12 @@ echo "alias nest='node /usr/local/lib/node_modules/@nestjs/cli/bin/nest.js'"
 
 #installing oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install python, pytorch
+
+sudo apt-get install -y python3
+sudo apt-get install -y pip
+#pytrorch
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# jupyter notebook
+pip install notebook
