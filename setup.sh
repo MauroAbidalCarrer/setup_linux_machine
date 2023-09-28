@@ -9,15 +9,15 @@ git config --global user.name "Mauro Abidal Carrer"
 git config --global init.defaultBranch main
 
 #install docker 
-sudo apt-get install -y ca-certificates gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo docker run hello-world
+# sudo apt-get install -y ca-certificates gnupg
+# sudo install -m 0755 -d /etc/apt/keyrings
+# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+# sudo chmod a+r /etc/apt/keyrings/docker.gpg
+# echo \
+#   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+#   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# sudo docker run hello-world
 
 #setting up shs key for github
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -33,7 +33,7 @@ echo "set nu"    >>  ~/.vimrc
 echo "set mouse=a">> ~/.vimrc
 
 
-#alias
+#Set up zshrc
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
 echo "alias status='git status'" >> ~/.zshrc
@@ -54,21 +54,15 @@ sudo apt install -y code # or code-insiders
 #install extensions
 code --install-extension ms-python.python
 code --install-extension mhutchie.git-graph
-
-#install node and nestJS
-sudo apt-get install -y npm
-sudo npm install npm@latest -g
-sudo npm i -g @nestjs/cli
-echo "alias nest='node /usr/local/lib/node_modules/@nestjs/cli/bin/nest.js'"
+code --install-extension mehyaa.workspace-storage-cleanup
 
 #installing oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# install python, pytorch
 
+# install python, pytorch
 sudo apt-get install -y python3
 sudo apt-get install -y pip
 #pytrorch
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-# jupyter notebook
-pip install notebook
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
