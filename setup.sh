@@ -37,8 +37,8 @@ echo "set mouse=a">> ~/.vimrc
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
 echo "alias status='git status -s'" >> ~/.zshrc
-echo "alias am='git commit -am'" >> ~/.zshrc
-echo "alias m='git commit -m'" >> ~/.zshrc
+echo "alias am='git commit -aqm'" >> ~/.zshrc
+echo "alias m='git commit -qm'" >> ~/.zshrc
 echo "export PATH=$PATH:~/.local/bin" >> ~/.zshrc
 
 
@@ -63,6 +63,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install python, pytorch
 sudo apt-get install -y python3
 sudo apt-get install -y pip
-#pytrorch
-# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
