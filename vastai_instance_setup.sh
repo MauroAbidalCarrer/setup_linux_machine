@@ -15,8 +15,8 @@ conda init --all
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
 echo "alias s='git status -s'" >> ~/.zshrc
-echo "alias am='git commit -am'" >> ~/.zshrc
-echo "alias m='git commit -m'" >> ~/.zshrc
+echo "alias am='git commit -amq'" >> ~/.zshrc
+echo "alias m='git commit -mq'" >> ~/.zshrc
 echo "alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn \"\$1\"; conda env create -n \"\$1\" -f \"\$2\" && conda activate \"\$1\"; }; _recreate_conda_env'" >> ~/.zshrc
 
 # Prevent tmux from starting automatically
