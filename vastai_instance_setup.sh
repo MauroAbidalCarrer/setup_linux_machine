@@ -14,7 +14,7 @@ conda init --all
 #aliases
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
-echo "alias status='git status -s'" >> ~/.zshrc
+echo "alias s='git status -s'" >> ~/.zshrc
 echo "alias am='git commit -am'" >> ~/.zshrc
 echo "alias m='git commit -m'" >> ~/.zshrc
 echo "alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn "$1"; conda env create -n "$1" -f "$2" && conda activate "$1"; }; _recreate_conda_env'" >> ~/.zshrc
