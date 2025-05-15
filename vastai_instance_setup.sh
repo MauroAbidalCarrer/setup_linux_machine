@@ -23,11 +23,13 @@ echo "cd ~/" >> ~/.zshrc
 # Prevent tmux from starting automatically
 touch ~/.no_auto_tmux
 
+# Git
 mkdir -p ~/repos
-
 if [[ -n "$REPOS_TO_CLONE" ]]; then
   IFS=',' read -ra REPOS <<< "$REPOS_TO_CLONE"
   for repo in "${REPOS[@]}"; do
     git clone "$repo" ~/repos/$(basename "$repo" .git)
   done
 fi
+git config --global user.email "mauroabidal@yahoo.fr"
+git config --global user.name  "Mauro Abidal Carrer"
