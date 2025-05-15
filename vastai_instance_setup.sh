@@ -11,13 +11,14 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 conda init --all
 
-#aliases
+#zshrc
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
 echo "alias s='git status -s'" >> ~/.zshrc
 echo "alias am='git commit -aqm'" >> ~/.zshrc
 echo "alias m='git commit -qm'" >> ~/.zshrc
 echo "alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn \"\$1\"; conda env create -n \"\$1\" -f \"\$2\" && conda activate \"\$1\"; }; _recreate_conda_env'" >> ~/.zshrc
+echo "cd ~/" >> ~/.zshrc
 
 # Prevent tmux from starting automatically
 touch ~/.no_auto_tmux
