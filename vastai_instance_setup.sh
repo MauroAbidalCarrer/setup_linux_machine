@@ -21,3 +21,12 @@ echo "alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate
 
 # Prevent tmux from starting automatically
 touch ~/.no_auto_tmux
+
+mkdir -p ~/repos
+
+if [[ -n "$REPOS_TO_CLONE" ]]; then
+  IFS=',' read -ra REPOS <<< "$REPOS_TO_CLONE"
+  for repo in "${REPOS[@]}"; do
+    git clone "$repo" ~/repos/$(basename "$repo" .git)
+  done
+fi
