@@ -36,7 +36,7 @@ echo "set mouse=a">> ~/.vimrc
 #Set up zshrc
 echo "alias update='sudo apt-get update'" >> ~/.zshrc
 echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
-echo "alias status='git status -s'" >> ~/.zshrc
+echo "alias s='git status -s'" >> ~/.zshrc
 echo "alias am='git commit -aqm'" >> ~/.zshrc
 echo "alias m='git commit -qm'" >> ~/.zshrc
 echo "export PATH=$PATH:~/.local/bin" >> ~/.zshrc
