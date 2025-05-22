@@ -1,8 +1,18 @@
+# Git
+alias a="git add"
 alias s='git status -s'
 alias am='git commit -aqm'
 alias m='git commit -qm'
-
+alias p='git push -q $(git remote | head -n 1) HEAD'
+amp() {
+  if [ -z "$1" ]; then
+    echo "Usage: amp \"commit message\""
+    return 1
+  fi
+  git commit -aqm "$1" && git push -q "$(git remote | head -n 1)" HEAD
+}
 clone_repo() {
+
   local repo_url="$1"
   local branch="$2"
 
@@ -37,7 +47,13 @@ clone_repo() {
 
   # Conda env creation
   if [ -f "conda-env.yaml" ]; then
-    conda env create -yf conda-env.yaml
+    if command -v conda >/dev/null 2>&1; then
+      conda env create -yf conda-env.yaml
+    else
+      echo "conda not found in PATH. Skipping environment creation."
+    fi
   fi
 }
 
+# Others
+alias install='sudo apt-get update && sudo apt-get install'
