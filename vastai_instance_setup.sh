@@ -12,12 +12,6 @@ source ~/miniconda3/bin/activate
 conda init --all
 
 #zshrc
-echo "alias update='sudo apt-get update'" >> ~/.zshrc
-echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
-echo "alias s='git status -s'" >> ~/.zshrc
-echo "alias am='git commit -aqm'" >> ~/.zshrc
-echo "alias m='git commit -qm'" >> ~/.zshrc
-echo "alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn \"\$1\"; conda env create -n \"\$1\" -f \"\$2\" && conda activate \"\$1\"; }; _recreate_conda_env'" >> ~/.zshrc
 echo "cd ~/" >> ~/.zshrc
 
 # Prevent tmux from starting automatically
@@ -25,11 +19,8 @@ touch ~/.no_auto_tmux
 
 # Git
 mkdir -p ~/repos
-if [[ -n "$REPOS_TO_CLONE" ]]; then
-  IFS=',' read -ra REPOS <<< "$REPOS_TO_CLONE"
-  for repo in "${REPOS[@]}"; do
-    git clone "$repo" ~/repos/$(basename "$repo" .git)
-  done
-fi
 git config --global user.email "mauroabidal@yahoo.fr"
 git config --global user.name  "Mauro Abidal Carrer"
+
+# Setup aliases
+wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O $ZSH_CUSTOM/aliases.zsh
