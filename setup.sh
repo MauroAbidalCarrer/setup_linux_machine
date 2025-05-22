@@ -8,38 +8,11 @@ git config --global user.email "mauroabida@yahoo.fr"
 git config --global user.name "Mauro Abidal Carrer"
 git config --global init.defaultBranch main
 
-#install docker 
-# sudo apt-get install -y ca-certificates gnupg
-# sudo install -m 0755 -d /etc/apt/keyrings
-# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-# sudo chmod a+r /etc/apt/keyrings/docker.gpg
-# echo \
-#   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-#   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-# sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-# sudo docker run hello-world
-
-#setting up shs key for github
-ssh-keygen -t ed25519 -C "your_email@example.com"
-eval "$(ssh-agent -s)"
-echo "Please copy the key: "
-cat ~/.ssh/id_ed25519.pub
-echo "\nAdd it to your github account(Settings->SSSH and GPG keys->new SSH key)"
-
 #setting up vim
 sudo apt-get install vim
 echo "syntax on" >>  ~/.vimrc
 echo "set nu"    >>  ~/.vimrc
 echo "set mouse=a">> ~/.vimrc
-
-
-#Set up zshrc
-echo "alias update='sudo apt-get update'" >> ~/.zshrc
-echo "alias install='sudo apt-get update && sudo apt-get install'" >> ~/.zshrc
-echo "alias s='git status -s'" >> ~/.zshrc
-echo "alias am='git commit -aqm'" >> ~/.zshrc
-echo "alias m='git commit -qm'" >> ~/.zshrc
-echo "export PATH=$PATH:~/.local/bin" >> ~/.zshrc
 
 
 #install VScode
@@ -63,3 +36,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install python, pytorch
 sudo apt-get install -y python3
 sudo apt-get install -y pip
+
+# Setup aliases
+wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O $ZSH_CUSTOM/aliases.zsh
