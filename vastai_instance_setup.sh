@@ -23,4 +23,4 @@ git config --global user.email "mauroabidal@yahoo.fr"
 git config --global user.name  "Mauro Abidal Carrer"
 
 # Setup aliases
-wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O $ZSH_CUSTOM/aliases.zsh
+wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O /root/.oh-my-zsh/custom/aliases.zsh
