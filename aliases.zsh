@@ -54,6 +54,19 @@ clone_repo() {
     fi
   fi
 }
+clone_working_repo() {
+  if [ -z "$WORKING_REPO" ]; then
+    echo "WORKING_REPO environment variable is not set."
+    return 1
+  fi
+
+  if [ -n "$WORKING_REPO_BRANCH" ]; then
+    clone_repo "$WORKING_REPO" "$WORKING_REPO_BRANCH"
+  else
+    clone_repo "$WORKING_REPO"
+  fi
+}
+
 
 # Conda
 alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn \"\$1\"; conda env create -n \"\$1\" -f \"\$2\" && conda activate \"\$1\"; }; _recreate_conda_env'
