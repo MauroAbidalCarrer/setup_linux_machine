@@ -69,7 +69,9 @@ clone_working_repo() {
 
 
 # Conda
-alias recreate_conda_env='function _recreate_conda_env(){ conda deactivate && conda env remove -yn \"\$1\"; conda env create -n \"\$1\" -f \"\$2\" && conda activate \"\$1\"; }; _recreate_conda_env'
+recreate_conda_env(){ 
+conda deactivate && conda env remove -yn "$1"; conda env create -n "$1" -f "$2" && conda activate "$1"; 
+}
 
 # Others
 alias install='sudo apt-get update && sudo apt-get install'
