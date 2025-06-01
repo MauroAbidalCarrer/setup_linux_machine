@@ -1,3 +1,6 @@
+# To place to ~/.oh-my-zsh/custom/aliases.zsh
+# wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
+
 # Git
 alias a="git add"
 alias s='git status -s'
