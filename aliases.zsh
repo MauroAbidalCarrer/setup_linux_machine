@@ -78,3 +78,4 @@ conda deactivate && conda env remove -yn "$1"; conda env create -n "$1" -f "$2" 
 
 # Others
 alias install='sudo apt-get update && sudo apt-get install'
+alias l1='ls -1'
