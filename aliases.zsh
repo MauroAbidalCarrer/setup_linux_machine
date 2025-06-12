@@ -1,7 +1,9 @@
 # To place to ~/.oh-my-zsh/custom/aliases.zsh
-# wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
+# wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -f
 
 # Git
+alias f="git fetch -q $(git remote | head -n 1) HEAD"
+alias pull="git pull -q $(git remote | head -n 1) HEAD"
 alias a="git add"
 alias s='git status -s'
 alias am='git commit -aqm'
@@ -80,3 +82,4 @@ conda deactivate && conda env remove -yn "$1"; conda env create -n "$1" -f "$2" 
 alias install='sudo apt-get update && sudo apt-get install'
 alias l1='ls -1'
 alias unpack='sudo dpkg -i'
+alias update_aliases="wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -f"
