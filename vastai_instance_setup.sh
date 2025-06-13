@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install -y git curl wget zsh 
+sudo apt-get install -y git curl wget zsh ncdu
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "exec zsh" >> ~/.bashrc
