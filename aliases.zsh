@@ -2,8 +2,8 @@
 # wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
 
 # Git
-alias f="git fetch -q $(git remote | head -n 1) HEAD"
-alias pull="git pull -q $(git remote | head -n 1) HEAD"
+alias f='git fetch -q $(git remote | head -n 1) HEAD'
+alias pull='git pull -q $(git remote | head -n 1) HEAD'
 alias switch="git switch -q"
 alias a="git add"
 alias s='git status -s'
