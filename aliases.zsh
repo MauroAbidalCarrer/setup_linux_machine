@@ -4,7 +4,7 @@
 # Git
 alias f='git fetch -q $(git remote | head -n 1) HEAD'
 alias pull='git pull -q $(git remote | head -n 1) HEAD'
-alias switch="git switch -q"
+alias sw="git switch -q"
 alias a="git add"
 alias s='git status -s'
 alias am='git commit -aqm'
