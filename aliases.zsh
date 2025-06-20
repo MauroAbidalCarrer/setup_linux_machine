@@ -57,6 +57,8 @@ clone_repo() {
     conda env create -yf conda-env.yaml
   elif [ -f environment.yaml ]; then
     conda env create -yf environment.yaml
+  elif [ -f environment.yml ]; then
+    conda env create -yf environment.yml
   else
     echo "no conda environment file found."
   fi
