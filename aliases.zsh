@@ -35,9 +35,9 @@ clone_repo() {
 
   # Clone with or without branch
   if [ -n "$branch" ]; then
-    git clone -b "$branch" "$repo_url"
+    git clone -q -b "$branch" "$repo_url"
   else
-    git clone "$repo_url"
+    git clone -q "$repo_url"
   fi
 
   # Proceed only if clone succeeded
@@ -51,13 +51,14 @@ clone_repo() {
   # Rename origin
   git remote rename origin "$remote_host"
 
-  # Conda env creation
-  if [ -f "conda-env.yaml" ]; then
-    if command -v conda >/dev/null 2>&1; then
-      conda env create -yf conda-env.yaml
-    else
-      echo "conda not found in PATH. Skipping environment creation."
-    fi
+  if ! command -v conda >/dev/null 2>&1; then
+    echo "conda not available"
+  elif [ -f conda-env.yaml ]; then
+    conda env create -yf conda-env.yaml
+  elif [ -f environment.yaml ]; then
+    conda env create -yf environment.yaml
+  else
+    echo "no conda environment file found."
   fi
 }
 clone_working_repo() {
