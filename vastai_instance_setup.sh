@@ -27,3 +27,5 @@ ssh-keygen -F github.com > /dev/null || ssh-keyscan github.com >> ~/.ssh/known_h
 # Setup aliases
 wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O /root/.oh-my-zsh/custom/aliases.zsh
 
+# Kaggle
+mkdir ~/.kaggle
