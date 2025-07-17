@@ -10,12 +10,19 @@ alias s='git status -s'
 alias am='git commit -aqm'
 alias m='git commit -qm'
 alias p='git push -q $(git remote | head -n 1) HEAD'
-amp() {
+amp() { # git add commit and push
   if [ -z "$1" ]; then
     echo "Usage: amp \"commit message\""
     return 1
   fi
   git commit -aqm "$1" && git push -q "$(git remote | head -n 1)" HEAD
+}
+swp() { # switch and pull
+  if [ -z "$1" ]; then
+    echo "Usage: amp \"commit message\""
+    return 1
+  fi
+  git switch -q "$1" && git pull -q "$(git remote | head -n 1)" HEAD
 }
 clone_repo() {
 
