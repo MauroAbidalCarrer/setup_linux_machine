@@ -11,7 +11,7 @@ alias am='git commit -aqm'
 alias m='git commit -qm'
 alias p='git push -q $(git remote | head -n 1) HEAD'
 alias rename_branch='git branch -m'
-alias prune_remote_branches='git remote prune $(git remote | head -n 1) HEAD'
+alias prune_remote_branches='git remote prune $(git remote | head -n 1)'
 amp() { # git add commit and push
   if [ -z "$1" ]; then
     echo "Usage: amp \"commit message\""
