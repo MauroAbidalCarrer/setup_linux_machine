@@ -96,3 +96,4 @@ alias install='sudo apt-get update && sudo apt-get install'
 alias l1='ls -1'
 alias unpack='sudo dpkg -i'
 alias search="conda search"
+alias scp_kaggle_credentials='scp ~/.kaggle/kaggle.json root@vast:~/.kaggle'
