@@ -5,6 +5,7 @@ alias update_aliases="wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.git
 alias f='git fetch -q $(git remote | head -n 1)'
 alias pu='git pull -q $(git remote | head -n 1) $(git branch --show-current)'
 alias sw="git switch -q"
+alias swt="git switch -q --track"
 alias a="git add"
 alias s='git status -s'
 alias am='git commit -aqm'
