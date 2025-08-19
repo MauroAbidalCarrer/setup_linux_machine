@@ -100,3 +100,4 @@ alias l1='ls -1'
 alias unpack='sudo dpkg -i'
 alias search="conda search"
 alias scp_kaggle_credentials='scp ~/.kaggle/kaggle.json root@vast:~/.kaggle'
+alias scp='scp -q'
