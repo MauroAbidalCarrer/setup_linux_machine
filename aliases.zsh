@@ -29,6 +29,30 @@ swp() { # switch and pull
   fi
   git switch -q "$1" && git pull -q "$(git remote | head -n 1)" HEAD
 }
+match_pr() {
+  # Get the current branch before switching
+  local current_branch
+  current_branch=$(git branch --show-current)
+
+  if [ -z "$current_branch" ]; then
+    echo "Not on a branch."
+    return 1
+  fi
+
+  if [ "$current_branch" = "main" ]; then
+    echo "Already on main branch."
+    return 1
+  fi
+
+  # Switch to main and pull latest
+  swp main || return 1
+
+  # Delete the old branch locally
+  git branch -D "$current_branch" || return 1
+
+  # Prune remote branches
+  prune_remote_branches
+}
 clone_repo() {
 
   local repo_url="$1"
