@@ -52,6 +52,11 @@ match_pr() {
 
   # Prune remote branches
   prune_remote_branches
+
+  # If an argument is provided, create and switch to the new branch
+  if [ -n "$1" ]; then
+    git switch -c "$1"
+  fi
 }
 clone_repo() {
 
