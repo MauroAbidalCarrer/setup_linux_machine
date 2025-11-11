@@ -131,3 +131,4 @@ alias search="conda search"
 alias scp_kaggle_credentials='scp ~/.kaggle/kaggle.json root@vast:~/.kaggle'
 alias scp='scp -q'
 alias nvidia_ps='sudo fuser -v /dev/nvidia*'
+alias watch_mem='watch -n 1 free -m'
