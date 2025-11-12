@@ -92,16 +92,10 @@ clone_repo() {
   # Rename origin
   git remote rename origin "$remote_host"
 
-  if ! command -v conda >/dev/null 2>&1; then
-    echo "conda not available"
+  if ! command -v uv >/dev/null 2>&1; then
+    echo "uv not available"
   elif [ -f conda-env.yaml ]; then
-    conda env create -yf conda-env.yaml
-  elif [ -f environment.yaml ]; then
-    conda env create -yf environment.yaml
-  elif [ -f environment.yml ]; then
-    conda env create -yf environment.yml
-  else
-    echo "no conda environment file found."
+    uv sync
   fi
 }
 clone_working_repo() {
