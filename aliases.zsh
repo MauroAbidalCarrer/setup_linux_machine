@@ -128,4 +128,3 @@ alias nvidia_ps='sudo fuser -v /dev/nvidia*'
 alias vast_update='python3 ~/.update_ssh_config.py'
 alias watch_m='watch -n 1 free -m'
 alias watch_n='nvidia-smi --loop'
-alias
