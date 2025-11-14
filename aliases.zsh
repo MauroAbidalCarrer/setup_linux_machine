@@ -1,5 +1,8 @@
 # To place to ~/.oh-my-zsh/custom/aliases.zsh
-alias update_aliases="wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh"
+update_aliases() {
+  wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
+  wget -q -O ~/.update_ssh_config.py https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_ssh_config.py
+}
 
 # Git
 alias f='git fetch -q $(git remote | head -n 1)'
