@@ -19,6 +19,7 @@ alias r='git restore'
 alias rename_branch='git branch -m'
 alias prune_remote_branches='git remote prune $(git remote | head -n 1)'
 alias notes_update='git add notes.md && m "Feat: Updated notes." && git push'
+alias d='git diff'
 amp() { # git add commit and push
   if [ -z "$1" ]; then
     echo "Usage: amp \"commit message\""
