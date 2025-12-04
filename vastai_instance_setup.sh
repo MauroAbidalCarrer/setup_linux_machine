@@ -16,6 +16,7 @@ touch ~/.no_auto_tmux
 mkdir -p ~/repos
 git config --global user.email "mauroabidal@yahoo.fr"
 git config --global user.name  "Mauro Abidal Carrer"
+git config --global pull.rebase true
 mkdir -p ~/.ssh
 ssh-keygen -F github.com > /dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts
 
