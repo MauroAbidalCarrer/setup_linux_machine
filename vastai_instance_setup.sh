@@ -25,3 +25,5 @@ wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/ref
 
 # Kaggle
 mkdir ~/.kaggle
+
+curl -fsSL https://opencode.ai/install | bash
