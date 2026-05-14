@@ -117,19 +117,17 @@ clone_working_repo() {
 }
 
 commit_per_file() {
-git log --name-only --pretty=format:'COMMIT %h %s' | awk '
+git log --name-only --pretty=format:'COMMIT %h|%ad|%s' --date=short | awk -F'|' '
 /^COMMIT/ {
-    commit=$2
-    $1=$2=""
-    sub(/^  */, "")
-    message=$0
+    commit=substr($1,8)
+    date=$2
+    message=$3
     next
 }
 NF && !seen[$0]++ {
-    print commit, "-", message, "-", $0
+    print commit, "-", date, "-", message, "-", $0
 }
-'
-}
+'}
 
 
 
