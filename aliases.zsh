@@ -116,6 +116,22 @@ clone_working_repo() {
   fi
 }
 
+commit_per_file() {
+git log --name-only --pretty=format:'COMMIT %h %s' | awk '
+/^COMMIT/ {
+    commit=$2
+    $1=$2=""
+    sub(/^  */, "")
+    message=$0
+    next
+}
+NF && !seen[$0]++ {
+    print commit, "-", message, "-", $0
+}
+'
+}
+
+
 
 # Conda
 recreate_conda_env(){ 
