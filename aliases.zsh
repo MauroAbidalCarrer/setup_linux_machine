@@ -130,6 +130,8 @@ NF && !seen[$0]++ {
 }
 '}
 
+# DVC
+alias dvc='uv run dvc'
 
 
 # Conda
