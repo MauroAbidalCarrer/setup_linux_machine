@@ -132,7 +132,7 @@ NF && !seen[$0]++ {
 
 # DVC
 alias dvc='uv run dvc'
-
+alias watch_d='watch -n 1 uv run dvc dag'
 
 # Conda
 recreate_conda_env(){ 
