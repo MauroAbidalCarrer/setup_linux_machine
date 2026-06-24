@@ -10,6 +10,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 echo "cd ~/" >> ~/.zshrc
 
 # Prevent tmux from starting automatically
+touch ~/.no_auto_tmux
+
+# install claude code
 curl -fsSL https://claude.ai/install.sh | bash
 
 # Git
