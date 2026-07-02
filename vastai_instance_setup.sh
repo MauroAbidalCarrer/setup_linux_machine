@@ -11,6 +11,7 @@ echo "cd ~/" >> ~/.zshrc
 
 # Prevent tmux from starting automatically
 touch ~/.no_auto_tmux
+echo "set -g mouse on" >> ~/.tmux.conf
 
 # install claude code
 curl -fsSL https://claude.ai/install.sh | bash
@@ -20,8 +21,6 @@ mkdir -p ~/repos
 git config --global user.email "mauroabidal@yahoo.fr"
 git config --global user.name  "Mauro Abidal Carrer"
 git config --global pull.rebase true
-mkdir -p ~/.ssh
-ssh-keygen -F github.com > /dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Setup aliases
 wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh -O /root/.oh-my-zsh/custom/aliases.zsh
@@ -30,3 +29,6 @@ wget https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/ref
 mkdir ~/.kaggle
 
 curl -fsSL https://opencode.ai/install | bash
+
+# Remove banner print on ssh connection
+touch .hushlogin
