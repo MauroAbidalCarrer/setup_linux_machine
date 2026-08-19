@@ -39,4 +39,4 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 
-curl "https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/vimrc" -o "~/.vimrc"
+curl "https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/vimrc" -o ~/.vimrc
