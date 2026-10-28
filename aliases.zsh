@@ -1,7 +1,7 @@
 # To place to ~/.oh-my-zsh/custom/aliases.zsh
 update_aliases() {
   wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
-  wget -q -O ~/.update_ssh_config.py https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_ssh_config.py
+  wget -q -O ~/.update_vast_ssh_config.sh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_vast_ssh_config.sh
 }
 
 # Git
