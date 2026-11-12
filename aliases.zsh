@@ -159,5 +159,5 @@ alias ss='ssh -qA -L 8080:localhost:8080'
 # vast
 alias vast_update='sh ~/.update_vast_ssh_config.sh'
 v_searcb(){
-  vastai search offers "$@" | uv run ~/.filter_vastai_search_offers.py
+  vastai search offers "$@" --raw | uv run ~/.filter_vastai_search_offers.py
 }
