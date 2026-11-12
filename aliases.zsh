@@ -1,8 +1,8 @@
 # To place to ~/.oh-my-zsh/custom/aliases.zsh
 update_aliases() {
-  wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
-  wget -q -O ~/.update_vast_ssh_config.sh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_vast_ssh_config.sh
-  wget -q -O ~/.filter_vastai_search_offers.py https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/filter_vastai_search_offers.py
+  wget -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
+  wget -O ~/.update_vast_ssh_config.sh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_vast_ssh_config.sh
+  wget -O ~/.filter_vastai_search_offers.py https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/filter_vastai_search_offers.py
 }
 
 # Git
