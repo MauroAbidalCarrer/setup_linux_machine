@@ -2,6 +2,7 @@
 update_aliases() {
   wget -q -O ~/.oh-my-zsh/custom/aliases.zsh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/aliases.zsh
   wget -q -O ~/.update_vast_ssh_config.sh https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/update_vast_ssh_config.sh
+  wget -q -O ~/.filter_vastai_search_offers.py https://raw.githubusercontent.com/MauroAbidalCarrer/setup_linux_machine/refs/heads/master/filter_vastai_search_offers.py
 }
 
 # Git
@@ -147,7 +148,6 @@ alias search="conda search"
 alias scp_kaggle_credentials='scp ~/.kaggle/kaggle.json root@vast:~/.kaggle'
 alias scp='scp -q'
 alias nvidia_ps='sudo fuser -v /dev/nvidia*'
-alias vast_update='sh ~/.update_vast_ssh_config.sh'
 alias list_hosts='cat ~/.ssh/config | grep "Host " | cut -d " " -f 2 | sort'
 alias watch_m='watch -n 1 free -m'
 alias watch_n='watch -n 1 nvidia-smi'
@@ -155,3 +155,9 @@ alias r='uv run'
 alias opencode='~/.opencode/bin/opencode'
 alias wandb='uv run wandb'
 alias ss='ssh -qA -L 8080:localhost:8080'
+
+# vast
+alias vast_update='sh ~/.update_vast_ssh_config.sh'
+v_searcb(){
+  vastai search offers "$@" | uv run ~/.filter_vastai_search_offers.py
+}
