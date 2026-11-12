@@ -161,3 +161,5 @@ alias vast_update='sh ~/.update_vast_ssh_config.sh'
 v_search(){
   vastai search offers "$@" --raw | uv run ~/.filter_vastai_search_offers.py
 }
+alias watch_instances="watch -n 1 vastai show instances --no-color"
+
